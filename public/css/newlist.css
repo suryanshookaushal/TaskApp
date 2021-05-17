@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
+html{
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #49AF96;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newlist{
+    background-color: white;
+    width: 270px;
+    height: 180px;
+    padding: 5px 25px;
+    display: inline-block;
+}
+.newlistheader{
+    margin-top: 5px;
+    letter-spacing: 1.5px;
+    font-family: Girassol;
+    color: #49AF96;
+}
+.newlistdata{
+    margin-bottom: 12px;
+    background-color: #ECE0E1;
+    border: none;
+    width: 90%;
+    padding: 5px 10px;
+    margin-left: 6px;
+    border-radius: 2px;
+}
+.newlistbutton{
+    margin-top: 15px;
+    width: 80px;
+    padding: 7px 12px;
+    height: 33px;
+    background-color: #49AF96;
+    border-radius: 2px;
+    border: none;
+    color: white;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+}
+.newlistbutton:hover{
+    transform: translateY(-3px);
+    transition: 0.25s;
+    box-shadow:  0px 5px 5px #49AF96;
+}
+.cancelbutton{
+    margin-top: 15px;
+    margin-left: 30%;
+    height: 33px;
+    margin-right: 10px;
+    width: 80px;
+    padding: 7px 12px;
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid black;
+    color: black;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+}
+.cancelbutton:hover{
+    transform: translateY(-3px);
+    transition: 0.25s;
+}
+.cancelbutton a{
+    text-decoration: none;
+    color: black;
+}

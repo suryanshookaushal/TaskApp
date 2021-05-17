@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Task App</title>
+        <link rel="stylesheet" href="css/profile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="profile">
+            <div class="sectiona">
+                <% if(fileContents==='') { %>
+                    <form action="/profile" method="POST" enctype="multipart/form-data" id="target">
+                        <img src="">
+                        <input type="file" id="myFile" name="myfile" onchange="javascript:this.form.submit();">
+                    </form>
+                <% } else { %>
+                    <img src="data:image/jpg;base64,<%=fileContents%>">
+                    <form action="/profile" method="POST" enctype="multipart/form-data" id="target">
+                        <label>Change picture</label>
+                        <input type="file" id="myFile" name="myfile"/>
+                    </form>
+                    <form action="/profile?_method=DELETE" method="POST" enctype="multipart/form-data">
+                        <label>Delete your photo</label>
+                        <button name="_method">Delete</button>
+                    </form>
+                <% } %>
+                <p><%=user.name%></p>
+            </div>
+            <div class="sectionb">
+
+            </div>
+        </div>
+    </body>
+</html>

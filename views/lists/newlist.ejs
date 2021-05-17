@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/newlist.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Task App</title>
+    </head>
+    <body>
+        <div class="newlist">
+            <h1 class="newlistheader">CREATE A NEW LIST</h1>
+            <form action="/newlist" method="POST" class="newlistform">
+                <i class="fa fa-user icon"></i>
+                <input type="text" name="name" placeholder="Name" class="newlistdata">
+                <button class="cancelbutton"><a href="/dashboard">Cancel</a></button>
+                <button class="newlistbutton">Create</button>
+            </form>
+        </div>
+    </body>
+</html>
