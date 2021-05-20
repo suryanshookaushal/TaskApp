@@ -2,6 +2,7 @@
 const mongoose = require('mongoose')
 const userrouter = require('./src/routes/userroute')
 const listrouter = require('./src/routes/listrouter')
+const taskrouter = require('./src/routes/taskrouter')
 const cookieParser = require('cookie-parser')
 const methodOverride = require('method-override')
 const path = require('path')
@@ -22,6 +23,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(userrouter)
 app.use(listrouter)
+app.use(taskrouter)
 
 
 

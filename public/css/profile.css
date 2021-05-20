@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
 html{
     box-sizing: border-box;
 }
@@ -26,10 +26,11 @@ body{
     flex-direction: column;
 }
 .sectiona img{
+    display: block;
     width: 120px;
     height: 100px;
     margin-left: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     margin-top: 15px;
     border-radius: 50%;
 }
@@ -37,17 +38,99 @@ body{
     color: #FCEDEA;
     margin-left: 20px;
     letter-spacing: 1px;
+    font-family: Lora;
 }
 .sectionb{
     height: 100%;
     width: 300px;
+    position: relative;
 }
-/* .sectiona .labell {
-    background-color: indigo;
-    color: white;
-    padding: 0.5rem;
-    font-family: sans-serif;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    margin-top: 1rem;
-} */
+.sectiona form #deletebutton{
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-right: 20px;
+    padding: 2px;
+    width: 28px;
+    height: 25px;
+    background-color: white;
+}
+.file-upload {
+    border: 1px solid black;
+    display: inline;
+    margin-left: 35px;
+    border-radius: 3px;
+    margin-right: 20px;
+    padding: 3px;
+    background-color: white;
+  }
+  .file-upload:hover{
+      cursor: pointer;
+  }
+  .file-upload input {
+    overflow: hidden;
+    width: 0;
+  }
+
+.sectiona .deleteimg button{
+    border: 1px solid black;
+    padding: 3px;
+    display: inline;
+    border-radius: 3px;
+}
+
+.sectionb .bheader{
+    margin-top: 5px;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 0px;
+    border-bottom: 1px solid grey;
+}
+.sectionb .bheader a{
+    position: absolute;
+    right: 9px;
+    top: -5px;
+}
+
+.sectionb .backbutton{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.sectionb .bemail{
+    margin-left: 15px;
+    border-bottom: 1px solid grey;
+    margin-right: 15px;
+    margin-bottom: 1px;
+}
+
+.sectionb .bemail .displaye{
+    color: grey;
+}
+
+.sectionb .beinfo{
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 0px;
+}
+
+.sectionb .beinfo .lists {
+    top: -10px;
+    left: 10px;
+    position: absolute;
+}
+
+.sectionb .beinfo .tasks{
+    top: -10px;
+    right: 10px;
+    position: absolute;
+}
+
+.sectionb .beinfo .total{
+    top: 25px;
+    left: 18px;
+    color: grey;
+    position: absolute;
+}

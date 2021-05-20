@@ -20,39 +20,39 @@ router.post('/newlist', auth,async(req, res)=>{
         res.status(500).send(e)
     }
 })
-router.get('/lists/:id', async(req, res)=>{
-    try{
-    const _id = req.params.id
-    const listp = await List.findById({_id})
-    res.send(listp)
-    }
-    catch(e){
-        console.log(e)
-        res.status(500).send(e)
-    }
-})
-router.patch('/lists/:id', async(req, res)=>{
-    try{
-    const _id = req.params.id
-    const listu = await List.findByIdAndUpdate({_id}, req.body, {new: true})
-    res.send(listu)
-    }
-    catch(e){
-        console.log(e)
-        res.status(500).send(e)
-    }
-})
-router.delete('/lists/:id', async(req, res)=>{
-    try{
-    const _id = req.params.id
-    const listd = await List.findById({_id})
-    await listd.remove()
-    res.redirect('/dashboard')
-    }
-    catch(e){
-        console.log(e)
-        res.redirect('/dashboard')
-    }
-})
+// router.get('/lists/:id', async(req, res)=>{
+//     try{
+//     const _id = req.params.id
+//     const listp = await List.findById({_id})
+//     res.send(listp)
+//     }
+//     catch(e){
+//         console.log(e)
+//         res.status(500).send(e)
+//     }
+// })
+// router.patch('/lists/:id', async(req, res)=>{
+//     try{
+//     const _id = req.params.id
+//     const listu = await List.findByIdAndUpdate({_id}, req.body, {new: true})
+//     res.send(listu)
+//     }
+//     catch(e){
+//         console.log(e)
+//         res.status(500).send(e)
+//     }
+// })
+// router.delete('/lists/:id', async(req, res)=>{
+//     try{
+//     const _id = req.params.id
+//     const listd = await List.findById({_id})
+//     await listd.remove()
+//     res.redirect('/dashboard')
+//     }
+//     catch(e){
+//         console.log(e)
+//         res.redirect('/dashboard')
+//     }
+// })
 
 module.exports = router

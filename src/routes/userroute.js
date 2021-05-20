@@ -60,11 +60,13 @@ router.post('/login',async(req, res)=>{
         res.redirect("/login");
     }
 })
+//Profile page for user
 router.get('/profile', auth, async(req, res)=>{
     try{
         const user =  req.user
         const fileContents = user.avatar.toString('base64')
-        res.render('profile/profile.ejs', {user, fileContents})
+        const count = await List.count({owner: user._id})
+        res.render('profile/profile.ejs', {user, fileContents, count})
     }
     catch(e){
         console.log(e)
