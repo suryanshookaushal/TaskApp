@@ -8,6 +8,10 @@ const taskschema = new mongoose.Schema({
     owner: {
         type: mongoose.Types.ObjectId,
         required: true
+    },
+    userowner:{
+        type: mongoose.Types.ObjectId,
+        required: true
     }
 })
 

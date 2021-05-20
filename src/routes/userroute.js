@@ -1,6 +1,7 @@
 const express = require('express')
 const User = require('../models/User')
 const List = require('../models/List')
+const Task = require('../models/Task')
 const auth = require('../middleware/auth')
 const multer = require('multer')
 const storage = multer.memoryStorage()
@@ -66,7 +67,8 @@ router.get('/profile', auth, async(req, res)=>{
         const user =  req.user
         const fileContents = user.avatar.toString('base64')
         const count = await List.count({owner: user._id})
-        res.render('profile/profile.ejs', {user, fileContents, count})
+        const taskst = await Task.count({userowner: req.user._id}) 
+        res.render('profile/profile.ejs', {user, fileContents, count, taskst})
     }
     catch(e){
         console.log(e)

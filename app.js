@@ -16,7 +16,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/main-task', {
 
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: true}))
-app.use(express.static(path.join(__dirname, 'public/')))
+app.use(express.static(path.join(__dirname, "/public")))
 app.set("view engine", "ejs")
 //Setting up our route
 app.use(express.json())

@@ -134,3 +134,10 @@ body{
     color: grey;
     position: absolute;
 }
+
+.sectionb .beinfo .totaltasks{
+    top: 25px;
+    right: 30px;
+    color: grey;
+    position: absolute;
+}

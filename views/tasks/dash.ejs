@@ -1,11 +1,50 @@
 <html>
     <head>
-        <link rel="stylesheet" href="taskd.css">
+        <link rel="stylesheet" href="/css/taskd.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Notes App</title>
     </head>
     <body>
-        <h1>
-            SDASD
-        </h1>
+        <div class="flexbox">
+            <div class="displaylist">
+                <form action="/profile" method="GET" class="displayuser">
+                    <button class="settings"><i class="fa fa-cog" aria-hidden="true"></i></i></button>
+                </form>
+                <h1 class="listheader">LISTS</h1>
+                <form id="myForm" action="" method="GET">
+                    <ul id="listto">
+                        <% lists.forEach(function(value) { %>
+                            <% if(id==value._id) { %>
+                                <li style="background-color: #49AF96; padding-left: 15px; width: 80%;"><%=value.name%></li>
+                         <% } else { %>  
+                            <li onclick="myFunction('<%=value._id%>')"><%=value.name%>
+                            </li>
+                       <% } %>
+                      <% }) %>
+                    </ul>
+                </form>
+                <form action="/newlist" method="GET">
+                    <button class="listbutton">New List</button>
+                </form>
+            </div>
+            <div class="displaytasks">
+                <form action="/logout" method="POST" class="logoutuser">
+                    <button class="logoutb"><i class="fa fa-sign-out fa-1x" aria-hidden="true"></i></button>
+                </form>
+                <h1 class="listheader">TASKS</h1>
+                <ul class="displayall">
+                    <% tasks.forEach(function(value){ %>
+                        <li><%=value.name%></li>
+                    <% }) %>
+                </ul>
+                <button class="newtaskb">
+                    <a href="/newtask/<%=id%>">
+                        <span>&#43;</span>
+                    </a>
+                </button>
+            </div>
+        </div>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <script src="/js/script.js"></script>
     </body>
 </html>
