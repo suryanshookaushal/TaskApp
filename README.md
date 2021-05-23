@@ -1,13 +1,15 @@
 # Task Manager App
-![Application Design Illustration]<img src="public/img/Capture.JPG">
+<img src="public/img/Capture.JPG" width="100px" height="100px">
 
 # User Authentication System(Login/Signup)
-![Login Page](public/img/login.JPG) ![Signup Page](public/img/signup.JPG)
+<img src = "public/img/login.JPG" width="50px" height="100px"> / <img src = "public/img/signup.JPG" width="50px" height="100px">
 
 # Main Dashboard Page for the user
-![Dashboard Page](public/img/dashboard.JPG)
+<img src = "public/img/dashboard.JPG" width = "100px" height="100px">
 
 # Profile page for the user:
-    ### Users can upload their profile pics.
-    ### Here there will be a count of all their list items and their tasks
-    ![Profile Page](public/img/profile.jpg)
+    - Users can upload their profile pics.
+    - Here there will be a count of all their list items and their tasks
+
+    
+<img src = "public/img/profile.JPG" width = "100px" height="100px">
