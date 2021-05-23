@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 const userschema = mongoose.Schema({
@@ -37,17 +37,18 @@ userschema.virtual('lists', {
 //Hashing the password
 userschema.pre('save', async function(next){
     const user = this
-    user.password = await bcrypt.hash(user.password, 8)
+    if(user.isModified('password')){
+        user.password = await bcrypt.hash(user.password, 8)
+    }
     next()
 })
 //Authenticating user
-userschema.statics.findByCredentials = async function(email, password){
+userschema.statics.findByCredentials = async(email, password)=>{
     const user = await User.findOne({email: email})
     if(!user){
        throw new Error("Invalid email")
     }
-    const ismatch = bcrypt.compare(password, user.password)
-    console.log(ismatch)
+    const ismatch = await bcrypt.compare(password, user.password)
     if(!ismatch){
         throw new Error("Invalid Password")
     }

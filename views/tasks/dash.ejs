@@ -34,7 +34,12 @@
                 <h1 class="listheader">TASKS</h1>
                 <ul class="displayall">
                     <% tasks.forEach(function(value){ %>
-                        <li><%=value.name%></li>
+                        <li class="listdata"><%=value.name%>
+                            <a href="/updatetask/<%=value.owner%>/<%=value._id%>"><button class="update"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                            <form action="/deletetask/<%=value.owner%>/<%=value._id%>?_method=DELETE" method="POST">
+                                <button class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            </form>
+                        </li>
                     <% }) %>
                 </ul>
                 <button class="newtaskb">
