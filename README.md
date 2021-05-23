@@ -2,7 +2,7 @@
 <img src="public/img/Capture.JPG" width="600px" height="400px">
 
 # User Authentication System(Login/Signup)
-<img src = "public/img/login.JPG" width="300px" height="400px"> / <img src = "public/img/signup.JPG" width="300px" height="400px">
+<img src = "public/img/login.JPG" width="400px" height="400px">       <img src = "public/img/signup.JPG" width="400px" height="400px">
 
 # Main Dashboard Page for the user
 <img src = "public/img/dashboard.JPG" width = "600px" height="400px">
