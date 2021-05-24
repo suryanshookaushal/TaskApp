@@ -6,3 +6,7 @@ function myFunction(clr) {
     
     document.getElementById("myForm").submit();
 }
+
+$(".listmessage").show();
+
+setTimeout(function() { $(".listmessage").fadeOut(); }, 5000);

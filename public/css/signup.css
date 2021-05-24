@@ -3,7 +3,28 @@ html{
     box-sizing: border-box;
 }
 
-
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    position: absolute;
+    top: 40px;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
 body{
     background-color: #49AF96;
     margin: 0;

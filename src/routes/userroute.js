@@ -28,8 +28,10 @@ router.post('/logout', (req, res)=>{
     }
 })
 router.get('/dashboard', auth, async(req, res)=>{
+    var msg = req.query.mesg;
+    req.query = ""
     const lists = await List.find({'owner': req.user._id})
-    res.render('dashboard', {lists})
+    res.render('dashboard', {lists, msg})
 })
 router.post('/signup', async(req, res)=>{
     try{
@@ -58,7 +60,8 @@ router.post('/login',async(req, res)=>{
     res.redirect('dashboard');
     }
     catch(e){
-        res.redirect("/login");
+        console.log(e)
+        res.render("login", {err_msg: e});
     }
 })
 //Profile page for user

@@ -5,20 +5,29 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
+        <% if(locals.msg){ %>
+            <div class="listmessage">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <%=msg %>
+            </div>
+         <% } %>
         <div class="flexbox">
             <div class="displaylist">
                 <form action="/profile" method="GET" class="displayuser">
-                    <button class="settings"><i class="fa fa-cog" aria-hidden="true"></i></i></button>
+                    <button class="settings"><i class="fa fa-cog" aria-hidden="true"></i></button>
                 </form>
                 <h1 class="listheader">LISTS</h1>
                 <form id="myForm" action="" method="GET">
                     <ul id="listto">
                         <% lists.forEach(function(value) { %>
-                            <li onclick="myFunction('<%=value._id%>')"><%=value.name%>
+                            <li onclick="myFunction('<%=value._id%>')">
+                                <%=value.name%>
+                                <form action="/deletelist/<%=value._id%>?_method=DELETE" method="POST"  class="delete">
+                                    <button name="_method"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                </form>
                             </li>
                       <% }) %>
                     </ul>
-
                 </form>
                 <form action="/newlist" method="GET">
                     <button class="listbutton">New List</button>
@@ -31,7 +40,7 @@
                 <p>Please select a list from the sidebar</p>
             </div>
         </div>
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>

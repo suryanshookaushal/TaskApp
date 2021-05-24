@@ -13,6 +13,32 @@ body{
     align-items: center;
     min-height: 100vh;
 }
+
+.listmessage {
+    padding: 20px;
+    background-color: #ff9800; 
+    color: white;
+    margin-bottom: 15px;
+    position: absolute;
+    top: 10px;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
 .flexbox{
     display: flex;
     width: 700px;
@@ -42,12 +68,24 @@ body{
     list-style: none;
     position: relative;
     margin-bottom: 5px;
-    width: 95%;
+    width: 90%;
     padding: 5px 0px;
     font-family: Arial;
     color: #555C85;
     cursor: pointer;
 }
+
+#listto li .delete{
+    position: absolute;
+    display: inline;
+    right: 10px;
+    display: none;
+}
+
+#listto li:hover .delete{
+    display: inline;
+}
+
 .listbutton {
     position:absolute;
     bottom: 30px;

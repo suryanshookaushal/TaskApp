@@ -5,6 +5,12 @@
         <title>Task App</title>
     </head>
     <body>
+        <% if(locals.err_msg) { %>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong> <%=err_msg%> </strong>
+          </div>
+          <% } %>
         <div class="signup">
             <h1 class="formheader">Login</h1>
             <form action="/login" method="POST" class="signupform">
