@@ -1,5 +1,6 @@
 const express = require('express')
 const List = require('../models/List')
+const Task = require('../models/Task')
 const auth = require('../middleware/auth')
 const router = new express.Router()
 
@@ -25,6 +26,7 @@ router.delete('/deletelist/:id', async(req, res)=>{
     const _id = req.params.id
     try{
         const list = await List.findByIdAndDelete({_id})
+        await Task.deleteMany({owner: _id})
         const mesg = "List Succesfully deleted"
         res.redirect('/dashboard?mesg='+mesg)
     }

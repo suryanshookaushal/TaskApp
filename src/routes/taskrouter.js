@@ -10,7 +10,7 @@ router.get('/tasks/:id', auth, async(req, res)=>{
     const lists = await List.find({'owner': req.user._id})
     const id = req.params.id
     const tasks = await Task.find({'owner': id})
-    res.render('tasks/dash', {lists, id, tasks, successm: req.flash('success')})
+    res.render('tasks/dash', {lists, id, tasks, successm: req.flash('success'), deletem: req.flash('delete'), updatem: req.flash('update')})
     }
     catch(e){
         console.log(e)
@@ -44,6 +44,7 @@ router.delete('/deletetask/:owner/:id', auth, async(req, res)=>{
     try{
         const task = await Task.findById(_id)
         await task.remove()
+        req.flash('delete', "Task succesfully deleted")
         res.redirect('/tasks/'+own)
     }
     catch(e){
@@ -64,6 +65,7 @@ router.patch('/updatetask/:owner/:id', auth, async(req, res)=>{
     const owner = req.params.owner
     try{
     const task = await Task.findByIdAndUpdate({_id}, req.body, {new: true})
+    req.flash('update', 'Task succesfully updated')
     res.redirect('/tasks/'+owner)
     }
     catch(e){

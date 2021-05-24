@@ -10,7 +10,19 @@
                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                 <%=successm%>
             </div>
-         <% } %>
+         <% }%>
+        <% if(deletem.length>0) { %>
+            <div class="successmessage" style="background-color: red;">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <%=deletem%>
+            </div>
+        <% } %>
+        <% if(updatem.length>0) { %>
+            <div class="successmessage" style="background-color: green;">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <%=updatem%>
+            </div>
+        <% } %>
         <div class="flexbox">
             <div class="displaylist">
                 <form action="/profile" method="GET" class="displayuser">
