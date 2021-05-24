@@ -10,7 +10,7 @@ router.get('/tasks/:id', auth, async(req, res)=>{
     const lists = await List.find({'owner': req.user._id})
     const id = req.params.id
     const tasks = await Task.find({'owner': id})
-    res.render('tasks/dash', {lists, id, tasks})
+    res.render('tasks/dash', {lists, id, tasks, successm: req.flash('success')})
     }
     catch(e){
         console.log(e)
@@ -29,6 +29,7 @@ router.post('/newtask/:id', auth, async(req, res)=>{
     task.owner = req.params.id
     task.userowner = req.user._id
     await task.save()
+    req.flash('success', "Task succesfully saved")
     res.redirect('/tasks/'+req.params.id)
     }
     catch(e){

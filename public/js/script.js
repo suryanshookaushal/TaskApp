@@ -8,5 +8,8 @@ function myFunction(clr) {
 }
 
 $(".listmessage").show();
-
 setTimeout(function() { $(".listmessage").fadeOut(); }, 5000);
+
+
+$(".successmessage").show();
+setTimeout(function() { $(".successmessage").fadeOut(); }, 5000);

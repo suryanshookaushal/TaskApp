@@ -4,6 +4,8 @@ const userrouter = require('./src/routes/userroute')
 const listrouter = require('./src/routes/listrouter')
 const taskrouter = require('./src/routes/taskrouter')
 const cookieParser = require('cookie-parser')
+const flash = require('connect-flash')
+const session = require('express-session')
 const methodOverride = require('method-override')
 const path = require('path')
 const express = require('express')
@@ -21,6 +23,13 @@ app.set("view engine", "ejs")
 //Setting up our route
 app.use(express.json())
 app.use(cookieParser())
+app.use(session({
+    secret: 'secret',
+    cookie: {maxAge: 60000},
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(flash())
 app.use(userrouter)
 app.use(listrouter)
 app.use(taskrouter)

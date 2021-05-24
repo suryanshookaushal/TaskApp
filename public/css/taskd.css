@@ -12,7 +12,40 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
 }
+
+
+.successmessage {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #ff9800; 
+    color: white;
+    margin-bottom: 15px;
+    position: absolute;
+    top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
+
 .flexbox{
     display: flex;
     width: 700px;

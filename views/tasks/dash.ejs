@@ -5,6 +5,12 @@
         <title>Notes App</title>
     </head>
     <body>
+        <% if(successm.length>0){ %>
+            <div class="successmessage">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <%=successm%>
+            </div>
+         <% } %>
         <div class="flexbox">
             <div class="displaylist">
                 <form action="/profile" method="GET" class="displayuser">
@@ -49,7 +55,7 @@
                 </button>
             </div>
         </div>
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="/js/script.js"></script>
     </body>
 </html>
