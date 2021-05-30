@@ -11,10 +11,10 @@ const path = require('path')
 const express = require('express')
 const app = express()
 
-mongoose.connect('mongodb://127.0.0.1:27017/main-task', {
-    useCreateIndex: true, useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false
-})
-
+mongoose.connect("mongodb+srv://suryanshoo:anshooman@cluster0-dqyqt.mongodb.net/test?retryWrites=true&w=majority",
+				 { useNewUrlParser: true, 
+				  useUnifiedTopology: true,
+				 useCreateIndex: true});
 
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: true}))
