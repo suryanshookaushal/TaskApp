@@ -9,7 +9,7 @@ const router = new express.Router()
 
 
 router.get('/', (req, res)=>{
-    res.send("Home page")
+    res.redirect("/signup")
 })
 router.get('/signup', (req, res)=>{
     res.render("signup")
@@ -61,7 +61,7 @@ router.post('/login',async(req, res)=>{
     }
     catch(e){
         console.log(e)
-        res.render("login", {err_msg: e});
+        res.render("login", {err_msg: "Invalid username or password"});
     }
 })
 //Profile page for user

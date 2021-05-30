@@ -22,9 +22,6 @@
                         <% lists.forEach(function(value) { %>
                             <li onclick="myFunction('<%=value._id%>')">
                                 <%=value.name%>
-                                <form action="/deletelist/<%=value._id%>?_method=DELETE" method="POST"  class="delete">
-                                    <button name="_method"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </form>
                             </li>
                       <% }) %>
                     </ul>

@@ -11,10 +11,10 @@ const path = require('path')
 const express = require('express')
 const app = express()
 
-mongoose.connect("mongodb+srv://suryanshoo:anshooman@cluster0-dqyqt.mongodb.net/test?retryWrites=true&w=majority",
-				 { useNewUrlParser: true, 
-				  useUnifiedTopology: true,
-				 useCreateIndex: true});
+mongoose.connect('mongodb://suryanshoo:anshooman@cluster0-shard-00-00.dqyqt.mongodb.net:27017,cluster0-shard-00-01.dqyqt.mongodb.net:27017,cluster0-shard-00-02.dqyqt.mongodb.net:27017/main-task?ssl=true&replicaSet=cluster0-shard-0&authSource=admin&retryWrites=true&w=majority', {
+    useCreateIndex: true, useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false
+})
+
 
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: true}))
